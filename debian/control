@@ -1,0 +1,119 @@
+Source: gazebo
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Uploaders: Thomas Moulard <thomas.moulard@gmail.com>
+Section: science
+Priority: extra
+Build-Depends: debhelper (>= 9),
+	       pkg-kde-tools (>= 0.6),
+               cmake,
+	       pkg-config,
+               doxygen,
+               doxygen-latex,
+	       libtinyxml-dev,
+	       libtbb-dev,
+	       libxml2-dev,
+	       libqt4-dev,
+	       libprotoc-dev,
+	       libfreeimage-dev,
+	       libprotobuf-dev,
+	       protobuf-compiler,
+	       libboost-all-dev,
+	       freeglut3-dev,
+	       libogre-dev,
+	       libtar-dev,
+	       libcurl4-openssl-dev,
+	       libcegui-mk2-dev,
+	       libgts-dev
+Standards-Version: 3.9.4
+Vcs-Browser: https://github.com/thomas-moulard/gazebo-deb
+Vcs-Git: git://github.com/thomas-moulard/gazebo-deb.git
+Homepage: http://gazebosim.org/
+
+Package: gazebo-dev
+Architecture: any
+Section: libdevel
+Depends: libtbb-dev,
+	 libxml2-dev,
+	 libqt4-dev,
+	 libprotoc-dev,
+	 libfreeimage-dev,
+	 libprotobuf-dev,
+	 libboost-all-dev,
+	 freeglut3-dev,
+	 libogre-dev,
+	 libtar-dev,
+	 libcurl4-openssl-dev,
+	 libcegui-mk2-dev,
+	 libgts-dev,
+	 libgts-dev,
+	 gazebo (= ${binary:Version}),
+	 gazebo-common (= ${binary:Version}),
+	 ${misc:Depends}
+Description: Open Source Robotics Simulator - Development Files
+ Gazebo is a multi-robot simulator for outdoor environments. Like
+ Stage (part of the Player project), it is capable of simulating a
+ population of robots, sensors and objects, but does so in a
+ three-dimensional world. It generates both realistic sensor feedback
+ and physically plausible interactions between objects (it includes an
+ accurate simulation of rigid-body physics).
+ .
+ This package contains development files (headers, shared library
+ symbolic link and pkg-config file).
+
+Package: gazebo-common
+Architecture: all
+Depends: ${misc:Depends}
+Description: Open Source Robotics Simulator - Shared files
+ Gazebo is a multi-robot simulator for outdoor environments. Like
+ Stage (part of the Player project), it is capable of simulating a
+ population of robots, sensors and objects, but does so in a
+ three-dimensional world. It generates both realistic sensor feedback
+ and physically plausible interactions between objects (it includes an
+ accurate simulation of rigid-body physics).
+ .
+ This package contains shared files such as 3d models, worlds and
+ robots.
+
+Package: gazebo
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Suggests: gazebo-doc
+Description: Open Source Robotics Simulator
+ Gazebo is a multi-robot simulator for outdoor environments. Like
+ Stage (part of the Player project), it is capable of simulating a
+ population of robots, sensors and objects, but does so in a
+ three-dimensional world. It generates both realistic sensor feedback
+ and physically plausible interactions between objects (it includes an
+ accurate simulation of rigid-body physics).
+
+Package: gazebo-dbg
+Architecture: any
+Section: debug
+Depends: gazebo (= ${binary:Version}),
+         ${misc:Depends}
+Description: Open Source Robotics Simulator - Debugging Symbols
+ Gazebo is a multi-robot simulator for outdoor environments. Like
+ Stage (part of the Player project), it is capable of simulating a
+ population of robots, sensors and objects, but does so in a
+ three-dimensional world. It generates both realistic sensor feedback
+ and physically plausible interactions between objects (it includes an
+ accurate simulation of rigid-body physics).
+ .
+ This package contains the debugging symbols.
+
+Package: gazebo-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Description: Open Source Robotics Simulator - Documentation
+ Gazebo is a multi-robot simulator for outdoor environments. Like
+ Stage (part of the Player project), it is capable of simulating a
+ population of robots, sensors and objects, but does so in a
+ three-dimensional world. It generates both realistic sensor feedback
+ and physically plausible interactions between objects (it includes an
+ accurate simulation of rigid-body physics).
+ .
+ This package contains the program documentation.

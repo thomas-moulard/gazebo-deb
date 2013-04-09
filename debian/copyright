@@ -1,0 +1,14 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: gazebo
+Upstream-Contact: gazebo-list@kforge.ros.org
+Source: http://gazebosim.org/
+
+Files: *
+Copyright: 2012 Open Source Robotics Foundation
+License: Apache
+ See `/usr/share/common-licenses/Apache-2.0'.
+
+Files: debian/*
+Copyright: 2013, Thomas Moulard <thomas.moulard@gmail.com>
+License: GPL-2
+ See `/usr/share/common-licenses/GPL-2'.

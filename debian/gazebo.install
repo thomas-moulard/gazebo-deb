@@ -1,0 +1,4 @@
+usr/bin/*
+usr/lib/*/*.so.*
+usr/lib/*/gazebo-*/plugins/*.so
+usr/share/gazebo/*
