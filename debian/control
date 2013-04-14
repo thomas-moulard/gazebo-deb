@@ -47,7 +47,7 @@ Depends: libtbb-dev,
 	 libgts-dev,
 	 libgts-dev,
 	 gazebo (= ${binary:Version}),
-	 gazebo-common (= ${binary:Version}),
+	 gazebo-common (= ${source:Version}),
 	 ${misc:Depends}
 Description: Open Source Robotics Simulator - Development Files
  Gazebo is a multi-robot simulator for outdoor environments. Like
