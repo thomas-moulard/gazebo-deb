@@ -28,6 +28,15 @@ override_dh_auto_build:
 	dh_auto_build -- # Compile the software.
 	dh_auto_build -- doc # Generate Doxygen HTML documentation.
 
+override_dh_auto_install:
+	dh_auto_install -- # Install.
+
+	# Get rid of fonts already packaged elsewhere.
+	rm debian/gazebo-common/usr/share/gazebo-*/media/gui/fonts/DejaVuSans.ttf
+	 ln -s /usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf \
+	  debian/gazebo-common/usr/share/gazebo-*/media/gui/fonts/DejaVuSans.ttf
+
+
 override_dh_strip:
 	dh_strip -a --dbg-package=gazebo-dbg
 

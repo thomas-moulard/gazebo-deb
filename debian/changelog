@@ -1,5 +1,5 @@
-gazebo (1.6.1-1) unstable; urgency=low
+gazebo (1.6.2-1) unstable; urgency=low
 
-  * Initial release. (Closes: #XXXXXX)
+  * Initial release. (Closes: #705440)
 
  -- Thomas Moulard <thomas.moulard@gmail.com>  Tue, 09 Apr 2013 14:50:35 +0900

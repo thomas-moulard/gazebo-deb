@@ -61,7 +61,7 @@ Description: Open Source Robotics Simulator - Development Files
 
 Package: gazebo-common
 Architecture: all
-Depends: ${misc:Depends}
+Depends: ttf-dejavu-core, ${misc:Depends}
 Description: Open Source Robotics Simulator - Shared files
  Gazebo is a multi-robot simulator for outdoor environments. Like
  Stage (part of the Player project), it is capable of simulating a
