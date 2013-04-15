@@ -4,7 +4,7 @@ Upstream-Contact: gazebo-list@kforge.ros.org
 Source: http://gazebosim.org/
 
 Files: *
-Copyright: 2012 Open Source Robotics Foundation
+Copyright: 2012-2013 Open Source Robotics Foundation
 License: Apache
  See `/usr/share/common-licenses/Apache-2.0'.
 
