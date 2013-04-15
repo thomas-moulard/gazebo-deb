@@ -30,36 +30,6 @@ Vcs-Browser: https://github.com/thomas-moulard/gazebo-deb
 Vcs-Git: git://github.com/thomas-moulard/gazebo-deb.git
 Homepage: http://gazebosim.org/
 
-Package: libgazebo-dev
-Architecture: any
-Section: libdevel
-Depends: libtbb-dev,
-	 libxml2-dev,
-	 libqt4-dev,
-	 libprotoc-dev,
-	 libfreeimage-dev,
-	 libprotobuf-dev,
-	 libboost-all-dev,
-	 freeglut3-dev,
-	 libogre-dev,
-	 libtar-dev,
-	 libcurl4-openssl-dev,
-	 libcegui-mk2-dev,
-	 libgts-dev,
-	 libgazebo1 (= ${binary:Version}),
-	 gazebo-common (= ${source:Version}),
-	 ${misc:Depends}
-Description: Open Source Robotics Simulator - Development Files
- Gazebo is a multi-robot simulator for outdoor environments. Like
- Stage (part of the Player project), it is capable of simulating a
- population of robots, sensors and objects, but does so in a
- three-dimensional world. It generates both realistic sensor feedback
- and physically plausible interactions between objects (it includes an
- accurate simulation of rigid-body physics).
- .
- This package contains development files (headers, shared library
- symbolic link and pkg-config file).
-
 Package: gazebo-common
 Architecture: all
 Depends: ttf-dejavu-core, ${misc:Depends}
@@ -104,6 +74,36 @@ Description: Open Source Robotics Simulator - shared library
  accurate simulation of rigid-body physics).
  .
  This package gathers shared libraries used
+
+Package: libgazebo-dev
+Architecture: any
+Section: libdevel
+Depends: libtbb-dev,
+	 libxml2-dev,
+	 libqt4-dev,
+	 libprotoc-dev,
+	 libfreeimage-dev,
+	 libprotobuf-dev,
+	 libboost-all-dev,
+	 freeglut3-dev,
+	 libogre-dev,
+	 libtar-dev,
+	 libcurl4-openssl-dev,
+	 libcegui-mk2-dev,
+	 libgts-dev,
+	 libgazebo1 (= ${binary:Version}),
+	 gazebo-common (= ${source:Version}),
+	 ${misc:Depends}
+Description: Open Source Robotics Simulator - Development Files
+ Gazebo is a multi-robot simulator for outdoor environments. Like
+ Stage (part of the Player project), it is capable of simulating a
+ population of robots, sensors and objects, but does so in a
+ three-dimensional world. It generates both realistic sensor feedback
+ and physically plausible interactions between objects (it includes an
+ accurate simulation of rigid-body physics).
+ .
+ This package contains development files (headers, shared library
+ symbolic link and pkg-config file).
 
 Package: gazebo-plugin-base
 Architecture: any

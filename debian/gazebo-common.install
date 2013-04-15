@@ -1,1 +1,3 @@
-usr/share/gazebo-*/*
+usr/share/gazebo-*/media/*
+usr/share/gazebo-*/sdf/*
+usr/share/gazebo-*/worlds/*
