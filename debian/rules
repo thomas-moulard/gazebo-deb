@@ -44,6 +44,10 @@ override_dh_install:
 	&& rm $$tmp \
 	&& ln -s /usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf $$tmp
 
+	# Install wrapper
+	cp debian/gazebo-wrapper debian/gazebo/usr/bin/gazebo \
+	&& chmod 755 debian/gazebo/usr/bin/gazebo
+
 
 override_dh_strip:
 	dh_strip -a --dbg-package=gazebo-dbg

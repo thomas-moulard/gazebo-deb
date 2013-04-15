@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+. /usr/share/gazebo-1.6/setup.sh
+/usr/bin/gazebo-1.6.2 $@
