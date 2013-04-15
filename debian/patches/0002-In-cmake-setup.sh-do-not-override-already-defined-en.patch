@@ -1,0 +1,37 @@
+From: Thomas Moulard <thomas.moulard@gmail.com>
+Date: Tue, 16 Apr 2013 00:45:40 +0900
+Subject: In cmake/setup.sh do not override already defined environment
+ variables.
+
+Forwarded: no
+Author: Thomas Moulard <thomas.moulard@gmail.com>
+---
+ cmake/setup.sh.in |   20 +++++++++++++++-----
+ 1 file changed, 15 insertions(+), 5 deletions(-)
+
+diff --git a/cmake/setup.sh.in b/cmake/setup.sh.in
+index 415394f..820168d 100644
+--- a/cmake/setup.sh.in
++++ b/cmake/setup.sh.in
+@@ -1,6 +1,16 @@
+-export GAZEBO_MASTER_URI=http://localhost:11345
+-export GAZEBO_MODEL_DATABASE_URI=http://gazebosim.org/models
+-export GAZEBO_RESOURCE_PATH=@CMAKE_INSTALL_PREFIX@/share/gazebo-@GAZEBO_VERSION@:@CMAKE_INSTALL_PREFIX@/share/gazebo_models
+-export GAZEBO_PLUGIN_PATH=@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/gazebo-@GAZEBO_VERSION@/plugins
++if `test x$GAZEBO_MASTER_URI = x`; then
++    export GAZEBO_MASTER_URI=http://localhost:11345
++fi
++if `test x$GAZEBO_MODEL_DATABASE_URI = x`; then
++    export GAZEBO_MODEL_DATABASE_URI=http://gazebosim.org/models
++fi
++if `test x$GAZEBO_RESOURCE_PATH = x`; then
++    export GAZEBO_RESOURCE_PATH=@CMAKE_INSTALL_PREFIX@/share/gazebo-@GAZEBO_VERSION@:@CMAKE_INSTALL_PREFIX@/share/gazebo_models
++fi
++if `test x$GAZEBO_PLUGIN_PATH = x`; then
++    export GAZEBO_PLUGIN_PATH=@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/gazebo-@GAZEBO_VERSION@/plugins
++fi
+ export LD_LIBRARY_PATH=@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/gazebo-@GAZEBO_VERSION@/plugins:${LD_LIBRARY_PATH}
+-export OGRE_RESOURCE_PATH=@OGRE_PLUGINDIR@
++if `test x$OGRE_RESOURCE_PATH = x`; then
++    export OGRE_RESOURCE_PATH=@OGRE_PLUGINDIR@
++fi
