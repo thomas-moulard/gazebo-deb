@@ -7,8 +7,9 @@ Let the compilation flags be specified by the user.
 Forwarded: no
 Author: Thomas Moulard <thomas.moulard@gmail.com>
 ---
- CMakeLists.txt |   40 ++++++++++++++++++++--------------------
- 1 file changed, 20 insertions(+), 20 deletions(-)
+ CMakeLists.txt                       |   40 +++++++++++++++++-----------------
+ gazebo/rendering/skyx/CMakeLists.txt |    4 ++--
+ 2 files changed, 22 insertions(+), 22 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
 index b255474..f686557 100644
@@ -79,3 +80,18 @@ index b255474..f686557 100644
  
  set (BUILD_TYPE_PROFILE FALSE)
  set (BUILD_TYPE_RELEASE FALSE)
+diff --git a/gazebo/rendering/skyx/CMakeLists.txt b/gazebo/rendering/skyx/CMakeLists.txt
+index 9be355e..5dab617 100644
+--- a/gazebo/rendering/skyx/CMakeLists.txt
++++ b/gazebo/rendering/skyx/CMakeLists.txt
+@@ -47,8 +47,8 @@ set (VCLOUDS_SOURCE_FILES
+   src/VClouds/VClouds.cpp
+ )
+ 
+-set (CMAKE_C_FLAGS "")
+-set (CMAKE_CXX_FLAGS "")
++#set (CMAKE_C_FLAGS "")
++#set (CMAKE_CXX_FLAGS "")
+ 
+ #set_source_files_properties(${SKYX_SOURCE_FILES} ${SKYX_HEADER_FILES}
+ #                      ${VCLOUDS_SOURCE_FILES} ${VCLOUDS_HEADER_FILES}
