@@ -1,0 +1,19 @@
+From: Thomas Moulard <thomas.moulard@gmail.com>
+Date: Tue, 16 Apr 2013 02:18:03 +0900
+Subject: Do not build 3rd-party dependencies.
+
+---
+ deps/CMakeLists.txt |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/deps/CMakeLists.txt b/deps/CMakeLists.txt
+index f51c592..d63f38d 100644
+--- a/deps/CMakeLists.txt
++++ b/deps/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-add_subdirectory(libccd)
+-add_subdirectory(opende)
++# add_subdirectory(libccd)
++# add_subdirectory(opende)
+ # add_subdirectory(ann)
+ # add_subdirectory(fcl)
