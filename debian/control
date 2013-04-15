@@ -45,7 +45,6 @@ Depends: libtbb-dev,
 	 libcurl4-openssl-dev,
 	 libcegui-mk2-dev,
 	 libgts-dev,
-	 libgts-dev,
 	 gazebo (= ${binary:Version}),
 	 gazebo-common (= ${source:Version}),
 	 ${misc:Depends}
