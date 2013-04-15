@@ -18,6 +18,7 @@ DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 .PHONY: override_dh_auto_configure	\
 	override_dh_auto_build		\
+	override_dh_install		\
 	override_dh_strip		\
 	override_dh_auto_test
 
@@ -28,13 +29,17 @@ override_dh_auto_build:
 	dh_auto_build -- # Compile the software.
 	dh_auto_build -- doc # Generate Doxygen HTML documentation.
 
-override_dh_auto_install:
-	dh_auto_install -- # Install.
+override_dh_install:
+	dh_install -- # Install.
+
+	# Remove unwanted shell extension.
+	mv debian/gazebo/usr/bin/gzmodel_create.sh \
+	   debian/gazebo/usr/bin/gzmodel_create
 
 	# Get rid of fonts already packaged elsewhere.
-	rm debian/gazebo-common/usr/share/gazebo-*/media/gui/fonts/DejaVuSans.ttf
-	 ln -s /usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf \
-	  debian/gazebo-common/usr/share/gazebo-*/media/gui/fonts/DejaVuSans.ttf
+	tmp=`ls debian/gazebo-common/usr/share/gazebo-*/media/gui/fonts/DejaVuSans.ttf` \
+	&& rm $$tmp \
+	&& ln -s /usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf $$tmp
 
 
 override_dh_strip:
