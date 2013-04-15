@@ -22,8 +22,11 @@ DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 	override_dh_strip		\
 	override_dh_auto_test
 
+# Cannot build against player, disable it for now.
 override_dh_auto_configure:
-	dh_auto_configure -- -DLIB_INSTALL_DIR=lib/${DEB_HOST_MULTIARCH}
+	dh_auto_configure -- -DLIB_INSTALL_DIR=lib/${DEB_HOST_MULTIARCH} \
+	-Dfreeimage_include_dir=/usr/include -Dfreeimage_library_dir=/usr/lib \
+	-DINCLUDE_PLAYER=OFF
 
 override_dh_auto_build:
 	dh_auto_build -- # Compile the software.

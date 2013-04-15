@@ -23,7 +23,8 @@ Build-Depends: debhelper (>= 9),
 	       libtar-dev,
 	       libcurl4-openssl-dev,
 	       libcegui-mk2-dev,
-	       libgts-dev
+	       libgts-dev,
+	       libgoogle-perftools-dev
 Standards-Version: 3.9.4
 Vcs-Browser: https://github.com/thomas-moulard/gazebo-deb
 Vcs-Git: git://github.com/thomas-moulard/gazebo-deb.git
