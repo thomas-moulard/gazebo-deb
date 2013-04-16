@@ -1,0 +1,3 @@
+* Purge Gazebo from its external dependencies.
+Currently, ODE cannot be purged due to local patches.
+Waiting for upstream release(?)

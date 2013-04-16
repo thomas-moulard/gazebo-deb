@@ -1,3 +1,2 @@
 0001-Do-not-force-compilation-flags.patch
 0002-In-cmake-setup.sh-do-not-override-already-defined-en.patch
-0003-Do-not-build-3rd-party-dependencies.patch
