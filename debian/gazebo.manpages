@@ -1,3 +1,10 @@
 debian/gazebo.1
 debian/gzclient.1
 debian/gzfactory.1
+debian/gzlog.1
+debian/gzphysics.1
+debian/gzsdf.1
+debian/gzsensor.1
+debian/gzserver.1
+debian/gzstats.1
+debian/gztopics.1
