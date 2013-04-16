@@ -7,4 +7,4 @@ debian/gzsdf.1
 debian/gzsensor.1
 debian/gzserver.1
 debian/gzstats.1
-debian/gztopics.1
+debian/gztopic.1
