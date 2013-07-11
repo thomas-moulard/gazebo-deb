@@ -6,7 +6,7 @@ Subject: In cmake/setup.sh do not override already defined environment
 Forwarded: no
 Author: Thomas Moulard <thomas.moulard@gmail.com>
 ---
- cmake/setup.sh.in |   20 +++++++++++++++-----
+ cmake/setup.sh.in | 20 +++++++++++++++-----
  1 file changed, 15 insertions(+), 5 deletions(-)
 
 diff --git a/cmake/setup.sh.in b/cmake/setup.sh.in

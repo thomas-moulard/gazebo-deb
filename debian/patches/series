@@ -1,2 +1,3 @@
 0001-Do-not-force-compilation-flags.patch
 0002-In-cmake-setup.sh-do-not-override-already-defined-en.patch
+0003-Fix-compilation-with-last-protobul-version.patch

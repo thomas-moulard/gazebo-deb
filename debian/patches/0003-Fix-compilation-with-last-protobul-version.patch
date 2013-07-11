@@ -1,0 +1,24 @@
+From: Thomas Moulard <thomas.moulard@gmail.com>
+Date: Thu, 11 Jul 2013 16:54:44 +0900
+Subject: =?UTF-8?q?Fix=20compilation=20with=20last=20protobul=20version.?=
+ =?UTF-8?q?=0AAlready=20fixed=20upstream.?=
+
+Author: Thomas Moulard <thomas.moulard@gmail.com>
+Forwarded: no
+---
+ gazebo/physics/World.hh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/gazebo/physics/World.hh b/gazebo/physics/World.hh
+index 8a0f4b4..209572a 100644
+--- a/gazebo/physics/World.hh
++++ b/gazebo/physics/World.hh
+@@ -466,7 +466,7 @@ namespace gazebo
+       private: EntityPtr selectedEntity;
+ 
+       /// \brief Incoming message buffer.
+-      private: std::vector<google::protobuf::Message> messages;
++      //private: std::vector<google::protobuf::Message> messages;
+ 
+       /// \brief Name of the world.
+       private: std::string name;
