@@ -27,8 +27,8 @@ Build-Depends: debhelper (>= 9),
 	       libgoogle-perftools-dev,
 	       libode-dev
 Standards-Version: 3.9.4
-Vcs-Browser: http://git.debian.org/?p=debian-science/packages/gazebo.git
-Vcs-Git: git://git.debian.org/debian-science/packages/gazebo.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=debian-science/packages/gazebo.git
+Vcs-Git: git://anonscm.debian.org/debian-science/packages/gazebo.git
 Homepage: http://gazebosim.org/
 
 Package: gazebo-common
