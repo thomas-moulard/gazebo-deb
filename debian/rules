@@ -1,36 +1,43 @@
 #!/usr/bin/make -f
 
-export DH_VERBOSE=1
-
-# Hardening.
-export DEB_BUILD_MAINT_OPTIONS=hardening=+all,-pie,+fortify
+# Hardening flags.
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all,-pie
 
 CPPFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS)
 CFLAGS:=$(shell dpkg-buildflags --get CFLAGS)
 CXXFLAGS:=$(shell dpkg-buildflags --get CXXFLAGS)
 LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS)
 
+# Duplicate flags as CMake is ignoring CPPFLAGS.
 CFLAGS+=$(CPPFLAGS)
 CXXFLAGS+=$(CPPFLAGS)
 
 # Multiarch.
 DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
+# Configuration flags.
+# Cannot build against player, disable it for now.
+CONFIGURE_ARGS= \
+	-DLIB_INSTALL_DIR=lib/${DEB_HOST_MULTIARCH} \
+	-Dfreeimage_include_dir=/usr/include \
+	-Dfreeimage_library_dir=/usr/lib \
+	-DINCLUDE_PLAYER=OFF
+
 .PHONY: override_dh_auto_configure	\
+	override_dh_auto_build-indep	\
 	override_dh_auto_build		\
 	override_dh_install		\
 	override_dh_strip		\
 	override_dh_auto_test
 
-# Cannot build against player, disable it for now.
 override_dh_auto_configure:
-	dh_auto_configure -- -DLIB_INSTALL_DIR=lib/${DEB_HOST_MULTIARCH} \
-	-Dfreeimage_include_dir=/usr/include -Dfreeimage_library_dir=/usr/lib \
-	-DINCLUDE_PLAYER=OFF
+	dh_auto_configure -- $(CONFIGURE_ARGS)
+
+override_dh_auto_build-indep:
+	dh_auto_build -- doc # Generate Doxygen HTML documentation.
 
 override_dh_auto_build:
 	dh_auto_build -- # Compile the software.
-	dh_auto_build -- doc # Generate Doxygen HTML documentation.
 
 override_dh_install:
 	dh_install -- # Install.
